@@ -1,0 +1,11 @@
+import React from "react";
+import { FC } from "react";
+import { Box, Input, useNavigate } from "zmp-ui";
+
+export const Inquiry: FC = () => {
+  return (
+    <Box p={4} className="bg-white">
+      <Input.Search placeholder="Search input ..." />
+    </Box>
+  );
+};
