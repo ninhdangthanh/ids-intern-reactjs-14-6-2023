@@ -8,8 +8,6 @@ const APP_URL_ONE = config.APP_URL_ONE;
 export const fetchProducts = createAsyncThunk(
   "product/fetchProducts",
   async () => {
-    console.log(APP_URL_ONE);
-
     const res = await axios.get<Product[]>(`${APP_URL_ONE}/products`);
     return res.data;
   }
@@ -67,10 +65,10 @@ const productSlice = createSlice({
   name: "product",
   initialState: initialState,
   reducers: {
-    setIsLoading: (state, action) => {
+    setIsLoading: (state) => {
       state.isLoading = true;
     },
-    removeIsLoading: (state, action) => {
+    removeIsLoading: (state) => {
       state.isLoading = false;
     },
     increateProductInPage: (state, action) => {

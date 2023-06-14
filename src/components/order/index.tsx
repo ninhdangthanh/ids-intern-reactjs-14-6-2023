@@ -1,9 +1,8 @@
 import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { editOrder } from "redux/order/orderSlice";
-import { editStaff } from "redux/staff/staffSlice";
 import { Order } from "types/product";
-import { Button, Modal } from "zmp-ui";
+import { Modal } from "zmp-ui";
 import { OrderPicker } from "./picker";
 
 export const OrderItem: FC<{ order: Order }> = ({ order }) => {

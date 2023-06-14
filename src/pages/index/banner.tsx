@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getDummyImage } from "utils/product";
 import { Box } from "zmp-ui";
 
 export const Banner: FC = () => {
@@ -17,7 +16,6 @@ export const Banner: FC = () => {
         cssMode
       >
         {[1, 2, 3, 4, 5]
-          .map((i) => getDummyImage(`banner-${i}.jpg`))
           .map((banner, i) => (
             <SwiperSlide key={i} className="px-4">
               <Box

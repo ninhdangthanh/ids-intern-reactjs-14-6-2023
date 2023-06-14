@@ -3,7 +3,6 @@ import React, { FC, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { MenuItem } from "types/menu";
 import { BottomNavigation, Icon } from "zmp-ui";
-import { CartIcon } from "./cart-icon";
 
 const tabs: Record<string, MenuItem> = {
   "/": {
@@ -16,8 +15,7 @@ const tabs: Record<string, MenuItem> = {
   },
   "/order": {
     label: "Order",
-    icon: <CartIcon />,
-    activeIcon: <CartIcon active />,
+    icon: <Icon icon="zi-list-1" />,
   },
 };
 
@@ -46,15 +44,19 @@ export const Navigation: FC = () => {
       onChange={(key: TabKeys) => setActiveTab(key)}
       className="z-50"
     >
-      {Object.keys(tabs).map((path: TabKeys) => (
-        <BottomNavigation.Item
-          key={path}
-          label={tabs[path].label}
-          icon={tabs[path].icon}
-          activeIcon={tabs[path].activeIcon}
-          onClick={() => navigate(path)}
-        />
-      ))}
+      {Object.keys(tabs).map((path: TabKeys) => {
+        let bgColorActive = (path === location.pathname) ? "greenyellow" : ""
+        return (
+          <BottomNavigation.Item
+            key={path}
+            label={tabs[path].label}
+            icon={tabs[path].icon}
+            activeIcon={tabs[path].activeIcon}
+            onClick={() => navigate(path)}
+            style={{backgroundColor: bgColorActive}}
+          />
+        )
+      })}
     </BottomNavigation>
   );
 };

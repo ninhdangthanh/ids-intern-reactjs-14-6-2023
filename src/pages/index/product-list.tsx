@@ -1,7 +1,5 @@
 import React, { FC, Suspense, useState } from "react";
 import { Section } from "components/section";
-import { useRecoilValue } from "recoil";
-import { productsState } from "state";
 import { Box, Button, Modal } from "zmp-ui";
 import { ProductItem } from "components/product/item";
 import { ProductItemSkeleton } from "components/skeletons";
@@ -9,17 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   isLoadingSelector,
   productsRemainingSelector,
-  selectHasMore,
-  selectPage,
-  selectProductsPerPage,
 } from "redux/products/selector";
 import { ProductCreate } from "types/product";
 import {
   createProduct,
-  fetchProducts,
-  increateProductInPage,
 } from "redux/products/productSlice";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 export const ProductListFallback: FC = () => {
   const products = [...new Array(12)];

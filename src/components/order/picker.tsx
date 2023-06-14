@@ -1,11 +1,9 @@
 import { Sheet } from "components/fullscreen-sheet";
-import React, { FC, ReactNode, useEffect, useState } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import { createPortal } from "react-dom";
 import { useDispatch } from "react-redux";
 import { deleteOrder } from "redux/order/orderSlice";
-import { deleteProduct } from "redux/products/productSlice";
-import { deleteStaff } from "redux/staff/staffSlice";
-import { Order, Staff } from "types/product";
+import { Order } from "types/product";
 import { Box } from "zmp-ui";
 
 export interface OrderPickerProps {

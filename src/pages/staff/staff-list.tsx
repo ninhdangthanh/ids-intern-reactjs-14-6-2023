@@ -3,7 +3,7 @@ import { Section } from "components/section";
 import { Box, Button, Modal } from "zmp-ui";
 import { ProductItemSkeleton } from "components/skeletons";
 import { useDispatch, useSelector } from "react-redux";
-import { ProductCreate, StaffCreate } from "types/product";
+import {  StaffCreate } from "types/product";
 import {
   isLoadingSelector,
   staffsRemainingSelector,

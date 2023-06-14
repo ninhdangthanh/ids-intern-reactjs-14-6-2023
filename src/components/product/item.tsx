@@ -1,14 +1,13 @@
 import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
-import { createProduct, editProduct } from "redux/products/productSlice";
-import { Product, ProductCreate } from "types/product";
-import { Button, Modal } from "zmp-ui";
+import { editProduct } from "redux/products/productSlice";
+import { Product } from "types/product";
+import { Modal } from "zmp-ui";
 import { ProductPicker } from "./picker";
 
 export const ProductItem: FC<{ product: Product }> = ({ product }) => {
   const [modalVisible, setModalVisible] = useState(false);
   //form state
-  const [id, setId] = useState(null);
   const [name, setName] = useState(product.name);
   const [description, setDescription] = useState(product.description);
   const [price, setPrice] = useState(product.price);

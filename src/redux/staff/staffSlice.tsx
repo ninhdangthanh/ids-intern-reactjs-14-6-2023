@@ -56,10 +56,10 @@ const staffSlice = createSlice({
   name: "staff",
   initialState: initialState,
   reducers: {
-    setIsLoading: (state, action) => {
+    setIsLoading: (state) => {
       state.isLoading = true;
     },
-    removeIsLoading: (state, action) => {
+    removeIsLoading: (state) => {
       state.isLoading = false;
     },
   },

@@ -32,7 +32,6 @@ export const createOrder = createAsyncThunk(
 export const editOrder = createAsyncThunk(
   "order/editOrder",
   async (orderData: Order) => {
-    console.log({ orderData });
     const res = await axios.put<Order>(
       `${APP_URL_TWO}/orders/${orderData.id}`,
       orderData
@@ -57,10 +56,10 @@ const orderSlice = createSlice({
   name: "order",
   initialState: initialState,
   reducers: {
-    setIsLoading: (state, action) => {
+    setIsLoading: (state) => {
       state.isLoading = true;
     },
-    removeIsLoading: (state, action) => {
+    removeIsLoading: (state) => {
       state.isLoading = false;
     },
   },

@@ -1,10 +1,5 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Box, Input, Page } from "zmp-ui";
-import { Inquiry } from "./inquiry";
-import { Welcome } from "./welcome";
-import { Banner } from "./banner";
-import { Categories } from "./categories";
-import { Recommend } from "./recommend";
 import { ProductList } from "./product-list";
 import { Divider } from "components/divider";
 import { useDispatch } from "react-redux";
@@ -44,7 +39,6 @@ const HomePage: React.FunctionComponent = () => {
 
   return (
     <Page className="relative flex-1 flex flex-col bg-white">
-      <Welcome />
       <Box className="flex-1 overflow-auto">
         <Box p={4} className="bg-white">
           <Input.Search

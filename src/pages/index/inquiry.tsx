@@ -1,6 +1,6 @@
 import React from "react";
 import { FC } from "react";
-import { Box, Input, useNavigate } from "zmp-ui";
+import { Box, Input } from "zmp-ui";
 
 export const Inquiry: FC = () => {
   return (
